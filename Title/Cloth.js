@@ -4,6 +4,7 @@ import { Square as Square } from "./Square.js";
 var Cloth = function (canvas,cloth_width,cloth_height,spacing,start_y) {
     this.points = [];
     this.squares = [];
+    this.squareLines = [];
 
     var start_x = canvas.width / 2 - cloth_width * spacing / 2;
 
@@ -44,15 +45,34 @@ Cloth.prototype.draw = function (ctx) {
     ctx.beginPath();
     
     var i = this.squares.length;
-    while (i--) this.squares[i].draw(ctx);
+    while (i--) {
+        let square = this.squares[i];
+
+        if(square === null)
+            continue;
+            
+        if (square.p2.constraints.length != 2 || square.p3.constraints[square.p3.constraintLeft] == null || square.p1.constraints[square.p1.constraintUp] == null){
+            this.squareLines.push(square);
+            this.squares[i] = null;
+            continue;
+        }
+
+        square.draw(ctx);
+    }
     ctx.fill();
 };
 
 Cloth.prototype.drawLines = function (ctx) {
     ctx.beginPath();
 
-    var i = this.squares.length;
-    while (i--) this.squares[i].draw(ctx);
+    var i = this.squareLines.length;
+    while (i--){ 
+        let square = this.squareLines[i]
+        square.p1.draw(ctx);
+        square.p2.draw(ctx);
+        square.p3.draw(ctx);
+        square.p4.draw(ctx);
+    }
     ctx.stroke();
 };
 

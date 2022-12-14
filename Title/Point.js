@@ -45,11 +45,11 @@ Point.prototype.update = function (delta,mouse,mouse_cut,mouse_influence,gravity
     this.vy = this.vx = 0
 };
 
-Point.prototype.draw = function () {
+Point.prototype.draw = function (ctx) {
     if (!this.constraints.length) return;
 
     var i = this.constraints.length;
-    while (i--) this.constraints[i].draw();
+    while (i--) this.constraints[i].draw(ctx);
 };
 
 Point.prototype.resolve_constraints = function (tear_distance,boundsx,boundsy) {
