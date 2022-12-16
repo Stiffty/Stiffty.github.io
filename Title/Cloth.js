@@ -65,14 +65,10 @@ Cloth.prototype.draw = function (ctx) {
 Cloth.prototype.drawLines = function (ctx) {
     ctx.beginPath();
 
-    var i = this.squareLines.length;
-    while (i--){ 
-        let square = this.squareLines[i]
-        square.p1.draw(ctx);
-        square.p2.draw(ctx);
-        square.p3.draw(ctx);
-        square.p4.draw(ctx);
-    }
+    var i = this.points.length;
+    while (i--)
+        this.points[i].draw(ctx);
+
     ctx.stroke();
 };
 
