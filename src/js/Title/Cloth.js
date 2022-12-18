@@ -66,22 +66,12 @@ Cloth.prototype.drawLines = function (ctx) {
     ctx.beginPath();
 
     var i = this.points.length;
-    while (i--)
+    while (i--){
         this.points[i].draw(ctx);
+    }
 
     ctx.stroke();
 };
 
-
-Cloth.prototype.drawExp = function (ctx) {
-    ctx.beginPath();
-
-
-    for (let i = 0; i < this.squares.length; i = i + 2) {
-        this.squares[i].draw(ctx);
-    }
-
-    ctx.fill();
-};
 
 export {Cloth};

@@ -41,10 +41,13 @@ var canvas,
 
 function getPositionsForText(cloth) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = "bold 100px serif";
+
+    let fontSize = cloth_height*spacing+start_y/2;
+    ctx.font = "bold "+fontSize + "px serif";
+
     let textWidth = ctx.measureText(text);
     let textPos = (canvas.width / 2) - (textWidth.width / 2);
-    ctx.fillText(text, textPos, 100);
+    ctx.fillText(text, textPos, cloth_height*spacing+start_y/2);
 
     // get a Uint32 representation of the bitmap:
     let data32 = new Uint32Array(ctx.getImageData(0, 0, canvas.width, canvas.height).data.buffer);
@@ -82,7 +85,9 @@ function getPositionsForText(cloth) {
 
 
 function update() {
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 
     cloth.update(tear_distance, physics_accuracy, mouse, mouse_cut, mouse_influence, gravity, boundsx, boundsy);
 
