@@ -41,7 +41,7 @@ Cloth.prototype.update = function (tear_distance,physics_accuracy,mouse,mouse_cu
 };
 
 
-Cloth.prototype.draw = function (ctx) {
+Cloth.prototype.draw = function (ctx,canvas_height) {
     ctx.beginPath();
     
     var i = this.squares.length;
@@ -57,16 +57,18 @@ Cloth.prototype.draw = function (ctx) {
             continue;
         }
 
+        if(square.p1.y<= canvas_height-20)
         square.draw(ctx);
     }
     ctx.fill();
 };
 
-Cloth.prototype.drawLines = function (ctx) {
+Cloth.prototype.drawLines = function (ctx,canvas_height) {
     ctx.beginPath();
 
     var i = this.points.length;
     while (i--){
+        if(this.points[i].y<= canvas_height-20)
         this.points[i].draw(ctx);
     }
 

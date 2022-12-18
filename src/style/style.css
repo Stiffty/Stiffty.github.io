@@ -1,105 +1,159 @@
-
-
 * {
-    margin: 0;
-    overflow: hidden;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
+
 body {
-    background: #000000;
+  background: #000000;
 
 }
+
 #c {
-    display: block;
-    margin: 20px auto 0;
+  display: block;
+  margin: 20px auto 0;
+}
+
+#projectBox {
+  border: double rgb(150, 139, 139) 8px;
+  border-radius: 5px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.projectEntry {
+  background-color: rgba(255, 255, 255, 0.062);
+  border: solid rgb(49, 49, 49) 1px;
+  color: white;
+  margin: 10px 5% 5px 5%;
+  
+  transition: all 0.5s;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@keyframes example {
+  0%   {transform: skewX(2deg);}
+  25%  {transform: skewX(-2deg);}
+  50%  {transform: skewX(2deg);;}
+  100% {transform: skewX(0deg);}
+  }
+
+.projectEntry:hover {
+  background-color: rgba(255, 255, 255, 0.226);
+  animation-name: example;
+  animation-duration: 0.5s;
+}
+
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #6a66a8;
+}
+
+p {
+  text-align: justify;
 }
 #info {
-    position: absolute;
-    left: -1px;
-    top: -1px;
-    width: auto;
-    max-width: 420px;
-    height: auto;
-    background: #f8f8f8;
-    border-bottom-right-radius: 10px;
-    border:1px solid #ccc;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: auto;
+  max-width: 420px;
+  height: auto;
+  background: #f8f8f8;
+  border-bottom-right-radius: 10px;
+  border: 1px solid #ccc;
 }
+
 #top {
-    background: #fff;
-    width: 100%;
-    height: auto;
-    position: relative;
-    border-bottom: 1px solid #eee;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid #eee;
 }
+
 p {
-    font-family: Arial, sans-serif;
-    color: rgb(153, 22, 22);
-    text-align: justify;
-    font-size: 16px;
-    margin: 0px 16px;
+  font-family: Arial, sans-serif;
+  color: rgb(153, 22, 22);
+  text-align: justify;
+  font-size: 16px;
+  margin: 0px 16px;
 }
-#github, #twitter {
-  color:#3377ee;
+
+#github,
+#twitter {
+  color: #3377ee;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin: 0 auto;
   text-align: center;
-  text-decoration:none;
+  text-decoration: none;
 }
+
 .center {
   text-align: center;
 }
+
 #net {
-  text-align:center;
-  white-space:nowrap;
-  font-size:19px;
-  background:rgba(0,0,0,0.1);
-  padding:8px 12px;
-  border-radius:8px;
-  display:block;
-  color:rgb(250, 28, 28);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 19px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: block;
+  color: rgb(250, 28, 28);
 }
-#net > span {
-  color:#3377ee;
+
+#net>span {
+  color: #3377ee;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   display: block;
   margin: 0 auto;
   text-align: center;
-  text-decoration:none;
+  text-decoration: none;
 }
+
 a {
-    font-family: sans-serif;
-    color: #444;
-    text-decoration: none;
-    font-size: 20px;
+  font-family: sans-serif;
+  color: #444;
+  text-decoration: none;
+  font-size: 20px;
 }
+
 #site {
-    float: left;
-    margin: 10px;
-    color: #ff9900;
+  float: left;
+  margin: 10px;
+  color: #ff9900;
   border-bottom: 1px dashed #ccc;
-  padding-bottom:3px
+  padding-bottom: 3px
 }
+
 #site:hover {
-    color: #ffaa11;
+  color: #ffaa11;
 }
+
 #close {
-    float: right;
-    margin: 10px;
+  float: right;
+  margin: 10px;
 }
+
 #p {
-    font-family: Verdana, sans-serif;
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    color: #4099ff;
-    border: 1px dashed #4099ff;
-    padding: 4px 8px;
+  font-family: Verdana, sans-serif;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #4099ff;
+  border: 1px dashed #4099ff;
+  padding: 4px 8px;
 }
 
 #new {
@@ -120,4 +174,3 @@ a {
   margin: 0 6px;
   font-size: 14px;
 }
-

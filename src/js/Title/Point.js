@@ -48,6 +48,8 @@ Point.prototype.update = function (delta,mouse,mouse_cut,mouse_influence,gravity
 Point.prototype.draw = function (ctx) {
     if (!this.constraints.length) return;
 
+
+
     var i = this.constraints.length;
     while (i--) this.constraints[i].draw(ctx);
 };

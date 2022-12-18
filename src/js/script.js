@@ -1,7 +1,7 @@
 import { Cloth as Cloth } from "./Title/Cloth.js"
 // settings
 
-var physics_accuracy = 10,
+var physics_accuracy = 5,
     mouse_influence = 10,
     mouse_cut = 5,
     gravity = 1200,
@@ -97,12 +97,12 @@ function update() {
 
     ctx.shadowBlur = bloom + rand;
     ctx.shadowColor = "white";
-    cloth.draw(ctx);
+    cloth.draw(ctx,canvas.height);
 
 
 
     ctx.shadowBlur = 0;
-    cloth.drawLines(ctx);
+    cloth.drawLines(ctx,canvas.height);
 
 
     requestAnimFrame(update);
@@ -185,8 +185,6 @@ function start() {
 
 
     ctx.fillStyle = "#f4fdf2";
-    ctx.strokeStyle = "#66ffff";
-    ctx.strokeStyle = "rgba(102, 255, 255, 0.5)";
     ctx.strokeStyle = gradient;
 
 
